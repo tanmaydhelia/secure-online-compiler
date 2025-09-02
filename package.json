@@ -51,6 +51,7 @@
     "lucide-react": "^0.542.0",
     "next": "latest",
     "react": "^18",
+    "react-day-picker": "^9.9.0",
     "react-dom": "^18",
     "tailwind-merge": "^3.3.1"
   },
