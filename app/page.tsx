@@ -58,7 +58,7 @@ export default function Home() {
     try {
       console.log(code);
       
-      const response = await fetch('http://localhost:3001/api/compile', {
+      const response = await fetch('http://56.228.36.109:3001/api/compile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
