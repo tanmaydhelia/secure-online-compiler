@@ -101,7 +101,7 @@ const executeCode = async (language, code, input = '') => {
         CpuQuota: 50000, // 50% CPU limit
         NetworkMode: 'none', // No network access
         AutoRemove: true,
-        Binds: [`${tempDir}:/app`] // Read-only mount
+        Binds: [`${tempDir}:/app`]
       },
       AttachStdout: true,
       AttachStderr: true
