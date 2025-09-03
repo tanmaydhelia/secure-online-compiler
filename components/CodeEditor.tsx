@@ -63,17 +63,15 @@ export default function CodeEditor({ language, value, onChange, onRun }: CodeEdi
   }, [language, onRun]);
 
   return (
-    <Card className="h-full w-full overflow-hidden bg-slate-950 border-slate-800 rounded-2xl shadow-md">
-      <CardContent className="p-0 h-full">
+    <div className="h-full">
         <CodeMirror
           value={value}
           height="100%"
           theme={githubDark}
           extensions={getExtensions()}
           onChange={(val) => onChange(val)}
-          className="h-full text-sm font-mono"
+          className="w-full h-full text-sm font-mono"
         />
-      </CardContent>
-    </Card>
+    </div>
   );
 }
