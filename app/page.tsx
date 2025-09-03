@@ -56,7 +56,7 @@ export default function Home() {
     setExecutionTime(null);
     
     try {
-      console.log(code);
+      // console.log(code);
       
       const response = await fetch('/api/compile', {
         method: 'POST',
@@ -71,7 +71,6 @@ export default function Home() {
       });
 
       const result = await response.json();
-      console.log(result);
       
       
       if (result.success) {

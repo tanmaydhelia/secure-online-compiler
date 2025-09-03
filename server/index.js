@@ -4,6 +4,7 @@ const Docker = require('dockerode');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs').promises;
 const path = require('path');
+const { log } = require('util');
 
 const app = express();
 const docker = new Docker();
