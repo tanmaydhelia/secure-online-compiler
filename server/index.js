@@ -117,8 +117,10 @@ const executeCode = async (language, code, input = '') => {
       stdout: true,
       stderr: true
     });
+    
 
     let output = '';
+
     
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
@@ -138,6 +140,7 @@ const executeCode = async (language, code, input = '') => {
           const exitCode = containerInfo.State.ExitCode;
           
           await cleanup(containerId, tempDir);
+          output = output.slice(8); // remove first 8 bytes
           
           resolve({
             output: output.trim(),

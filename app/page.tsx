@@ -71,6 +71,7 @@ export default function Home() {
       });
 
       const result = await response.json();
+      console.log(result);
       
       
       if (result.success) {
@@ -174,24 +175,40 @@ export default function Home() {
       <main className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-140px)]">
           {/* Code Editor */}
-          <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+          <Card className="h-full flex flex-col bg-slate-800/50 border-slate-700 backdrop-blur-sm">
             <div className="p-4 border-b border-slate-700">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-white">Code Editor</h2>
-                <div className="flex items-center space-x-2">
-                  <div className="flex space-x-1">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="flex items-center space-x-8">
+                  {/* Shortcut hints */}
+                  <div className="hidden md:flex items-center space-x-6 text-slate-400 text-xs font-mono">
+                    <span className="flex items-center space-x-1">
+                      <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">Ctrl</kbd>
+                      <span>+</span>
+                      <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">R</kbd>
+                      <span>Run</span>
+                    </span>
+                    <span className="flex items-center space-x-1">
+                      <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">Ctrl</kbd>
+                      <span>+</span>
+                      <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">D</kbd>
+                      <span>Duplicate</span>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-            <CodeEditor
-              language={selectedLanguage}
-              value={code}
-              onChange={setCode}
-            />
+            <div className='flex-1'>
+              <CodeEditor
+                language={selectedLanguage}
+                value={code}
+                onChange={setCode}
+                onRun={() => {
+                  // 🔥 This runs when Ctrl+R is pressed in the editor
+                  handleRunCode();
+                }}
+              />
+            </div>
           </Card>
 
           {/* Output Panel */}

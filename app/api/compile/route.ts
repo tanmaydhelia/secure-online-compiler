@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const { language, code, input } = await request.json();
     
     // Forward request to backend API server
-    const response = await fetch('http://56.228.36.109:3001/api/compile', {
+    const response = await fetch('http://localhost:3001/api/compile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
