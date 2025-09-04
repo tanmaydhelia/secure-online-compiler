@@ -323,7 +323,7 @@ return (
               <span className="flex items-center space-x-1">
                 <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">Ctrl</kbd>
                 <span>+</span>
-                <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">R</kbd>
+                <kbd className="px-2 py-1 bg-slate-700 rounded text-slate-200 border border-slate-600">'</kbd>
                 <span>Run</span>
               </span>
               <span className="flex items-center space-x-1">
