@@ -29,7 +29,7 @@ export default function CodeEditor({ language, value, onChange, onRun }: CodeEdi
 
     const customKeymap = keymap.of([
       {
-        key: "Ctrl-r",
+        key: "Ctrl-'",
         run: () => {
           console.log("Run triggered");
           if (onRun) onRun();
